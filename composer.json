@@ -1,7 +1,7 @@
 {
   "name": "pkeogan/laravel-html-extra-core-ui",
   "description": "A Laravel 5.5 Package that expands LaravelCollective/html further with different js plugins.",
-  "version": "1.0",
+  "version": "1.1",
   "keywords": [
     "laravel",
     "AdminLTE",
