@@ -41,7 +41,7 @@ class LaravelHtmlExtraServiceProvider extends ServiceProvider
           __DIR__.'/laravel-html-extra.php' => config_path('laravel-html-extra.php'),
          ]);
       // adds our custom views to laravel can call them with adminlte::example.page
-      view()->addNamespace('htmlextra', base_path('/vendor/pkeogan/laravel-html-extra/src/views'));
+      view()->addNamespace('htmlextra', base_path('/vendor/pkeogan/laravel-html-extra-core-ui/src/views'));
 
          // Register the form components
         //flatpickr componentes
