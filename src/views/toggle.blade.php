@@ -18,18 +18,22 @@
   -- |  Usage: See Readme.md
   --}}
 @pushonce('afterstyles:toggle')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" />
+<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
 @endpushonce
 @pushonce('scripts:toggle')
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 @endpushonce
 
-@php if(isset($attributes['required']) && (in_array('required' ,$attributes) || in_array('Required' ,$attributes))){ $name = $name.' *'; } @endphp
+
+
+@php if(isset($attributes['required']) && (in_array('required' ,$attributes) || in_array('Required' ,$attributes))){ $name = $name.' *'; } 
+$attributes['data-toggle'] = "toggle";
+@endphp
 
 <div class="form-group @if(isset($data['hidden']) && $data['hidden'])hidden @endif" id="{{ $id }}_group">
- <label for="middle_name" class="control-label">{{ $name }}</label>
+<label for="{{$id}}" class="control-label">{{ $name }}</label>
 @if(isset($attributes) && array_key_exists('placeholder', $attributes)) @if($attributes['placeholder'] != null ) placeholder: "{{ $attributes['placeholder'] }}", @endif @endif
-<div class="label-control"> {{ Form::checkbox( $id, 'true', $value, ['id' => 'toggle-'.$id ]) }}  </div>
+<div class="label-control"> {{ Form::checkbox( $id, 'true', $value, ['id' => 'toggle-'.$id, 'data-toggle'=>'toggle']) }}  </div>
    <p class="help-block">{!! $helper_text  !!}</p>
 </div>
   
